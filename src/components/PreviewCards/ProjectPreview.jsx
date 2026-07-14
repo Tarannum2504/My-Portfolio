@@ -56,19 +56,19 @@ export const ProjectPreview = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-4 border-t border-[#222]/30 pt-4">
+                <div className="flex flex-wrap items-center gap-3 border-t border-[#222]/30 pt-4">
                   {p.githubUrl && p.githubUrl !== "#" ? (
                     <a
                       href={p.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-[15px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300 cursor-pointer"
                     >
-                      <Github size={14} /> Code
+                      <Github size={13} strokeWidth={1.5} /> Code
                     </a>
                   ) : (
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[15px] uppercase tracking-widest text-[#555] cursor-not-allowed">
-                      <Github size={14} /> Code
+                    <span className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626]/30 font-mono text-[12px] uppercase tracking-widest text-[#444] cursor-not-allowed select-none">
+                      <Github size={13} strokeWidth={1.5} /> Code
                     </span>
                   )}
                   {p.demoUrl && p.demoUrl !== "#" ? (
@@ -76,13 +76,13 @@ export const ProjectPreview = () => {
                       href={p.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-mono text-[15px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#D4AF37]/30 font-mono text-[12px] uppercase tracking-widest text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300 cursor-pointer"
                     >
-                      Demo <ArrowUpRight size={14} />
+                      Demo <ArrowUpRight size={13} strokeWidth={1.5} />
                     </a>
                   ) : (
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[15px] uppercase tracking-widest text-[#555] cursor-not-allowed">
-                      Demo <ArrowUpRight size={14} />
+                    <span className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626]/30 font-mono text-[12px] uppercase tracking-widest text-[#444] cursor-not-allowed select-none">
+                      Demo <ArrowUpRight size={13} strokeWidth={1.5} />
                     </span>
                   )}
                 </div>

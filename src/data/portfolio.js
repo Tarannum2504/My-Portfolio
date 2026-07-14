@@ -221,12 +221,12 @@ export const trainings = [
     title: "RHCSA Training",
     org: "Training Program",
     year: "2025",
-    duration: "Currently Pursuing",
-    description: "Red Hat Certified System Administrator training covering Linux system administration, command line, and system configuration.",
+    duration: "Upcoming Training",
+    description: "Planned Red Hat Certified System Administrator (RHCSA) training focused on Linux system administration, command-line operations, shell scripting, and system configuration.",
     skills: ["Linux Administration", "Command Line", "System Configuration", "Shell Scripting"],
     image: null,
     pdf: null,
-    status: "pursuing",
+    status: "upcoming",
   },
 ];
 

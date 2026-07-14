@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { ThemeProvider } from "./hooks/useTheme";
+
 import { FontLoader } from "./components/FontLoader";
 import { Navbar } from "./components/Navbar/Navbar";
 import { FloatingMenu } from "./components/FloatingMenu/FloatingMenu";
@@ -64,10 +64,8 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }

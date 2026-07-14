@@ -1155,7 +1155,8 @@ Would you like to know more about another achievement?`,
         return {
           intent: "Training",
           reply: `**Title**: ${matchedTraining.title}
-**Status**: Upcoming (Has not started yet)
+**Status**: Upcoming
+**Type**: Planned Training
 **Planned Start**: ${matchedTraining.plannedStart}
 **Purpose**: ${matchedTraining.purpose}
 **Expected Learning**: ${matchedTraining.expectedLearning.join(", ")}

@@ -423,7 +423,7 @@ ${experience.map(e => `- ${e.role} @ ${e.org} (${e.period}). ${e.desc} [Tech: ${
 ${certifications.map(c => `- ${c.title} — ${c.org} (${c.year})${c.note ? ` — ${c.note}` : ""}`).join("\n")}
 
 ### Trainings
-${trainings.map(t => `- ${t.title} — ${t.org} (${t.duration})${t.status === "pursuing" ? " — In Progress" : ""}`).join("\n")}
+${trainings.map(t => `- ${t.title} — ${t.provider} (${t.year || t.plannedStart})${t.status === "Upcoming" ? " — Upcoming (Planned)" : ""}`).join("\n")}
 
 ### Achievements
 ${achievements.map(a => `- ${a.title} — ${a.org} (${a.year}) [${a.type}]${a.featured ? " ★ Featured" : ""}`).join("\n")}

@@ -18,8 +18,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { PageLayout } from "../components/PageLayout";
 import { Reveal } from "../components/Reveal";
-import { Footer } from "../components/Footer/Footer";
 import { socialLinks } from "../data/portfolio";
 
 // ═══════════════════════════════════════════════════
@@ -442,59 +442,28 @@ export const InferaAI = () => {
   };
 
   return (
-    <div className="bg-[#0B0B0B] min-h-screen text-[#F5F5F5] pt-[120px] pb-20">
-      <div className="site-container max-w-[1100px]">
-        {/* ════ HERO SECTION ════ */}
+    <PageLayout>
+      <div className="max-w-[1100px] mx-auto">
+        {/* Heading */}
         <Reveal>
-          <div className="text-center pt-12 pb-10 md:pt-16 md:pb-14">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#262626] bg-[#111] mb-6"
-            >
-              <motion.span
-                className="w-2 h-2 rounded-full bg-green-500"
-                animate={{ opacity: [1, 0.4, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#666]">
-                Online &middot; Mistral AI
-              </span>
-            </motion.div>
-
-            {/* Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-5xl md:text-7xl font-bold tracking-tight text-[#F5F5F5] mb-5"
-            >
-              INFERA{" "}
-              <span className="text-[#D4AF37]">AI</span>
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-body text-[17px] md:text-[19px] text-[#888] max-w-2xl mx-auto leading-relaxed"
-            >
-              Your AI guide to Tarannum Khan's portfolio. Ask anything about projects, skills, 
-              education, internships, certifications, achievements, or career goals.
-            </motion.p>
-
-            {/* Powered by */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#444] mt-6"
-            >
-              Powered by Mistral AI &bull; Hugging Face Inference
-            </motion.p>
+          <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="font-mono text-[19px] tracking-[0.35em] uppercase text-[#D4AF37] mb-6">
+                AI CHAT
+              </div>
+              <p className="font-body text-[18px] text-[#A1A1A1] max-w-xl">
+                Your AI guide to Tarannum Khan&apos;s portfolio. Ask anything about projects, skills, education, and achievements.
+              </p>
+            </div>
+            {/* Status Badge */}
+            <div className="shrink-0 flex sm:self-start">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#262626] bg-[#111]">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[#666]">
+                  Online &middot; Mistral AI
+                </span>
+              </div>
+            </div>
           </div>
         </Reveal>
 
@@ -771,12 +740,6 @@ export const InferaAI = () => {
           </div>
         </Reveal>
       </div>
-
-      {/* Bottom spacing before footer */}
-      <div className="pb-24" />
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };

@@ -59,6 +59,13 @@ export const Training = () => {
                       </span>
                     </div>
                   )}
+                  {t.status === "upcoming" && (
+                    <div className="absolute top-3 right-3">
+                      <span className="font-mono text-[10px] uppercase tracking-widest px-2 py-1 rounded-full bg-[#38bdf8]/20 text-[#38bdf8] border border-[#38bdf8]/30">
+                        Upcoming
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Info */}
@@ -102,35 +109,39 @@ export const Training = () => {
                     )}
                   </div>
 
-                  <div className="flex items-center gap-3 border-t border-[#222]/30 pt-4">
+                  <div className="flex flex-wrap items-center gap-3 border-t border-[#222]/30 pt-4">
                     {t.status === "pursuing" ? (
-                      <span className="font-mono text-[14px] uppercase tracking-widest text-[#555]">
+                      <span className="font-mono text-[12px] uppercase tracking-widest text-[#555] select-none py-2 px-1">
                         Certificate pending
+                      </span>
+                    ) : t.status === "upcoming" ? (
+                      <span className="font-mono text-[12px] uppercase tracking-widest text-[#555] select-none py-2 px-1">
+                        Planned Training
                       </span>
                     ) : t.pdf ? (
                       <button
                         onClick={() => handleOpenPdf(t)}
-                        className="inline-flex items-center gap-1.5 font-mono text-[14px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300 cursor-pointer"
                       >
                         <Eye size={13} strokeWidth={1.5} /> View Certificate
                       </button>
                     ) : t.image ? (
                       <button
                         onClick={() => setSelected(t)}
-                        className="inline-flex items-center gap-1.5 font-mono text-[14px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300 cursor-pointer"
                       >
                         <Eye size={13} strokeWidth={1.5} /> View Certificate
                       </button>
                     ) : (
-                      <span className="font-mono text-[14px] uppercase tracking-widest text-[#555]">
+                      <span className="font-mono text-[12px] uppercase tracking-widest text-[#555] select-none py-2 px-1">
                         No certificate
                       </span>
                     )}
-                    {t.image && !t.pdf && t.status !== "pursuing" && (
+                    {t.image && !t.pdf && t.status !== "pursuing" && t.status !== "upcoming" && (
                       <a
                         href={t.image}
                         download
-                        className="inline-flex items-center gap-1.5 font-mono text-[14px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors"
+                        className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300"
                       >
                         <Download size={13} strokeWidth={1.5} /> Download
                       </a>

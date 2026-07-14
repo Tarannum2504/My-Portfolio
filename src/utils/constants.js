@@ -6,13 +6,6 @@ export const LED_PALETTES = {
   Red: { on: "#FF3333", glow: "rgba(255, 51, 51, 0.55)", dim: "rgba(255, 51, 51, 0.035)" },
 };
 
-export const LED_QUOTES = [
-  "FOCUS ON YOUR GOALS",
-  "TURNING DATA INTO MEANINGFUL INSIGHTS",
-  "ALWAYS LEARNING",
-  "BUILD. LEARN. IMPROVE",
-  "DATA TELLS STORIES",
-];
 
 export const LED_DEFAULTS = {
   message: "FOCUS ON YOUR GOALS",

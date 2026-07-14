@@ -103,23 +103,23 @@ export const Certifications = () => {
                     )}
                   </div>
 
-                  <div className="flex items-center gap-3 border-t border-[#222]/30 pt-4">
+                  <div className="flex flex-wrap items-center gap-3 border-t border-[#222]/30 pt-4">
                     {cert.pdf ? (
                       <button
                         onClick={() => handleOpenPdf(cert)}
-                        className="inline-flex items-center gap-1.5 font-mono text-[14px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300 cursor-pointer"
                       >
                         <Eye size={13} strokeWidth={1.5} /> View Certificate
                       </button>
                     ) : cert.image ? (
                       <button
                         onClick={() => setSelectedCert(cert)}
-                        className="inline-flex items-center gap-1.5 font-mono text-[14px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300 cursor-pointer"
                       >
                         <Eye size={13} strokeWidth={1.5} /> Preview
                       </button>
                     ) : (
-                      <span className="font-mono text-[14px] uppercase tracking-widest text-[#555]">
+                      <span className="font-mono text-[12px] uppercase tracking-widest text-[#555] select-none py-2 px-1">
                         No certificate
                       </span>
                     )}
@@ -127,7 +127,7 @@ export const Certifications = () => {
                       <a
                         href={cert.image}
                         download
-                        className="inline-flex items-center gap-1.5 font-mono text-[14px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] transition-colors"
+                        className="inline-flex items-center gap-1.5 px-4.5 py-2 rounded-full border border-[#262626] font-mono text-[12px] uppercase tracking-widest text-[#F5F5F5] hover:text-[#D4AF37] hover:border-[#D4AF37]/45 transition-all duration-300"
                       >
                         <Download size={13} strokeWidth={1.5} /> Download
                       </a>

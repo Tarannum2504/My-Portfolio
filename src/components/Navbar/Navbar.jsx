@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate, useLocation, useSearchParams } from "react-router-dom";
-import { Search, Sun, Moon, Menu, X, ChevronDown } from "lucide-react";
-import { useTheme } from "../../hooks/useTheme";
+import { Search, Menu, X, ChevronDown } from "lucide-react";
 
 export const Navbar = ({ onOpenNav, isNavOpen }) => {
-  const { theme, toggleTheme } = useTheme();
   const [searchVal, setSearchVal] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
@@ -56,7 +54,7 @@ export const Navbar = ({ onOpenNav, isNavOpen }) => {
     <div className="fixed top-0 left-0 right-0 z-40 py-4 bg-[#080808] border-b border-[#262626]">
       <div className="site-container flex items-center justify-between">
         {/* Left Side: Logo & Main Navigation */}
-        <div className="flex items-center gap-10">
+        <div className="flex-1 flex items-center gap-10">
           <Link
             to="/"
             className="font-display text-2xl font-bold text-[#F5F5F5] tracking-tight hover:text-[#D4AF37] transition-colors"
@@ -122,7 +120,7 @@ export const Navbar = ({ onOpenNav, isNavOpen }) => {
         </div>
 
         {/* Center: Search Bar */}
-        <form onSubmit={handleSearchSubmit} className="flex-1 max-w-[320px] mx-4 relative">
+        <form onSubmit={handleSearchSubmit} className="max-w-[320px] w-full mx-4 relative">
           <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#666]" strokeWidth={1.5} />
           <input
             type="text"
@@ -133,16 +131,8 @@ export const Navbar = ({ onOpenNav, isNavOpen }) => {
           />
         </form>
 
-        {/* Right Side: Theme Toggle & Hamburger menu */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            className="w-9 h-9 rounded-full border border-[#222] flex items-center justify-center text-[#666] hover:text-[#D4AF37] hover:border-[#D4AF37]/40 transition-colors cursor-pointer"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={15} strokeWidth={1.5} /> : <Moon size={15} strokeWidth={1.5} />}
-          </button>
-
+        {/* Right Side: Hamburger menu (balanced with left side) */}
+        <div className="flex-1 flex items-center justify-end gap-3">
           <button
             onClick={onOpenNav}
             aria-label="Open menu"
