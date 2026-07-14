@@ -1,0 +1,10 @@
+/* Scanlines overlay styling */
+.led-scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.04) 2px,
+    rgba(255, 255, 255, 0.04) 4px
+  );
+}
